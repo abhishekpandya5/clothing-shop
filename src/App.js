@@ -15,11 +15,18 @@ import { auth, createUserProfileDocument } from "./firebase/firebase.utils";
 import { setCurrentUser } from "./redux/user/userActions";
 import { selectCurrentUser } from "./redux/user/userSelector";
 
+//for storing SHOP_DATA to firestore
+// import { selectCollectionsForPreview } from "./redux/shop/shopSelector";
+// import { addCollectionAndDocuments } from "./firebase/firebase.utils";
+
 class App extends React.Component {
   unSubscribeFromAuth = null;
 
   componentDidMount() {
     const { setCurrentUser } = this.props;
+
+    //for storing SHOP_DATA to firestore
+    // const { collectionsArray } = this.props;
 
     this.unSubscribeFromAuth = auth.onAuthStateChanged(async (userAuth) => {
       //console.log('logged in user: ',userAuth);
@@ -36,6 +43,9 @@ class App extends React.Component {
       }
 
       setCurrentUser(userAuth);
+
+      //for storing SHOP_DATA to firestore
+      /*  addCollectionAndDocuments("collections",collectionsArray.map(({ title, items }) => ({ title, items }))); */
     });
   }
 
@@ -73,6 +83,7 @@ class App extends React.Component {
 // for memoization using reselect library
 const mapStateToProps = createStructuredSelector({
   currentUser: selectCurrentUser,
+  // collectionsArray: selectCollectionsForPreview,
 });
 
 const mapDispatchToProps = (dispatch) => {
