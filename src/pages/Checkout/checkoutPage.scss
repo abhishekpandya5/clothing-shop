@@ -36,3 +36,22 @@
     color: red;
   }
 }
+
+.empty-cart {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  min-height: 200px;
+  .image {
+    width: 210px;
+    height: 162px;
+  }
+  .text {
+    margin-top: 10px;
+  }
+  .continue-btn {
+    margin-top: 45px;
+  }
+}

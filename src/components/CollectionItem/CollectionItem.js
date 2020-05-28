@@ -4,12 +4,8 @@ import { addItem } from "../../redux/cart/cartActions";
 
 // import CustomButton from "../CustomButton/CustomButton";
 import {
-  CollectionItemContainer,
-  BackgroundImage,
-  CollectionFooterContainer,
-  NameContainer,
-  PriceContainer,
-  AddButton,
+  CollectionItemContainer, BackgroundImage,
+  CollectionFooterContainer, NameContainer, PriceContainer, AddButton
 } from "./CollectionItemStyles";
 
 // import './collectionItem.scss';

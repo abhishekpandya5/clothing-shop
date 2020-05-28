@@ -34,7 +34,7 @@ class App extends React.Component {
         const userRef = await createUserProfileDocument(userAuth);
 
         userRef.onSnapshot((snapShot) => {
-          // console.log(snapShot.data());
+          console.log(snapShot.data());
           setCurrentUser({
             id: snapShot.id,
             ...snapShot.data(),
@@ -49,9 +49,9 @@ class App extends React.Component {
     });
   }
 
-  componentWillUnmount() {
+  /* componentWillUnmount() {
     this.unSubscribeFromAuth();
-  }
+  } */
 
   render() {
     return (
